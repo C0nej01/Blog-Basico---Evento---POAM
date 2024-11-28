@@ -1,0 +1,188 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+
+    /* Tipografia para la pagina */
+    font-family: Consolas, Arial, sans-serif
+}
+
+/* PALETA DE COLORES
+    Texto:
+        .c-green: #40A02B
+*/
+.c-green{
+    color: #40A02B;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid gray;
+    padding: 1.3rem 1rem;
+}
+
+header .logo p {
+    font-size: 2.5rem;
+}
+
+header ul {
+    list-style-type: none;
+    display: flex; 
+    gap: 2rem;
+    padding: 0;
+    margin: 0;
+    background-color: transparent;
+    transform: none; 
+    opacity: 1; 
+    transition: transform 0.3s ease, opacity 0.3s ease; 
+}
+
+header ul li {
+    font-size: x-large;
+}
+
+header ul li a {
+    text-decoration: none;
+    color: black;
+}
+
+header .search-bar {
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    width: 50%;
+    border-radius: 8px;
+    border: 2px solid gray;
+}
+
+header .search-bar input {
+    border: none;
+    outline: none;
+    padding: 0 10px;
+    font-size: x-large;
+    width: 100%;
+    background-color: transparent;
+}
+
+header .search-bar .search-icon {
+    display: flex;
+    align-items: center;
+    padding-left: 8px;
+    border: none;
+    background: none;
+}
+
+header .search-bar svg {
+    stroke: gray;
+}
+
+header .hamburger {
+    display: none;
+    cursor: pointer;
+    position: relative;
+    z-index: 11;
+}
+
+header ul.active {
+    transform: translateY(0); 
+    opacity: 1; 
+}
+
+header ul.hidden {
+    transform: translateY(-100%);
+    opacity: 0; 
+}
+
+
+/* SECCION DE EQUIPO POAM */
+/*
+General
+    section
+        .section-title
+        .section-subtitle
+
+Identificadores usados
+    #collaborators-poam: 
+        .collaborator: 
+            .collaborator-img
+            .collaborator-name 
+ */
+section{
+    margin-block: 1rem;
+}
+    .section-title{
+        font-size: 1.5rem;
+        text-align: center;
+    }
+    .section-subtitle{
+        font-size: 1.3rem;
+        text-align: center;
+        color: gray;
+        /* font-weight: 100; */
+    }
+
+#collaborators-poam{
+    display: flex;
+    padding-block: 1.5rem;
+    justify-content: center;
+}
+.collaborator{
+    margin: 0 auto;
+}
+    .collaborator-img{
+        width: 8rem;
+        min-width: 4rem;
+    }
+    .collaborator-name{
+        font-size: 1.3rem;
+        font-weight: bold;
+        margin-block: .5rem;
+        text-align: center;
+    }
+
+
+@media (max-width: 768px) {
+    header .search-bar {
+        display: none; 
+    }
+
+    header ul {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: #f8f8f8;
+        padding: 2rem 0;
+        text-align: center;
+        transform: translateY(-100%);
+        opacity: 0; 
+        transition: transform 0.3s ease, opacity 0.3s ease; 
+    }
+
+    header .hamburger {
+        display: block; 
+    }
+}
+
+
+@media (min-width: 769px) {
+    header ul {
+        display: flex;
+        flex-direction: row; 
+        position: static; 
+        opacity: 1; 
+        transform: none; 
+    }
+
+    header .hamburger {
+        display: none; 
+    }
+
+    header .search-bar {
+        display: flex; 
+    }
+}
